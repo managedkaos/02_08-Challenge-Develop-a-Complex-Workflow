@@ -8,6 +8,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - run: python --version > unbuntu.txt
+            - run: python -c "import sys; print(sys.version)"
     windows:
         name: windows
         runs-on: windows-latest
@@ -25,6 +26,4 @@ jobs:
         steps:
             - run: |
                   echo "ubuntu"
-                  cat ubuntu.txt
                   echo "macos"
-                  cat macos.txt

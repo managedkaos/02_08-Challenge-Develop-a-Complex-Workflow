@@ -15,7 +15,7 @@ jobs:
             - run: python --version
     macos:
         name: macos
-        runs-on: macos
+        runs-on: macos-latest
         steps:
             - run: python --version
     summary:

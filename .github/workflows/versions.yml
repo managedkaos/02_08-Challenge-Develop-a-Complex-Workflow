@@ -1,0 +1,27 @@
+name: Python Versions
+
+on: push
+
+jobs:
+    ubuntu:
+        name: ubuntu
+        runs-on: ubuntu-latest
+        steps:
+            - run: python --version
+    windows:
+        name: windows
+        runs-on: windows-latest
+        steps:
+            - run: python --version
+    macos:
+        name: macos
+        runs-on: macos
+        needs: [Ubuntu, Windows]
+        steps:
+            - run: python --version
+    summary:
+        name: summary
+        runs-on: ubuntu`
+        needs: [ubuntu, windows, macos]
+        steps:
+            - run: python --version

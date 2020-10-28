@@ -7,7 +7,7 @@ jobs:
         name: ubuntu
         runs-on: ubuntu-latest
         steps:
-            - run: python --version
+            - run: python --version > unbuntu.txt
     windows:
         name: windows
         runs-on: windows-latest
@@ -17,10 +17,14 @@ jobs:
         name: macos
         runs-on: macos-latest
         steps:
-            - run: python --version
+            - run: python --version > macos.txt
     summary:
         name: summary
         runs-on: ubuntu-latest
         needs: [ubuntu, windows, macos]
         steps:
-            - run: python --version
+            - run: |
+                  echo "ubuntu"
+                  cat ubuntu.txt
+                  echo "macos"
+                  cat macos.txt

@@ -20,7 +20,7 @@ jobs:
             - run: python --version
     summary:
         name: summary
-        runs-on: ubuntu
+        runs-on: ubuntu-latest
         needs: [ubuntu, windows, macos]
         steps:
             - run: python --version

@@ -7,23 +7,28 @@ jobs:
         name: ubuntu
         runs-on: ubuntu-latest
         steps:
-            - run: python --version > unbuntu.txt
-            - run: python -c "import sys; print(sys.version)"
+            - run: |
+                date
+                python --version
     windows:
         name: windows
         runs-on: windows-latest
         steps:
-            - run: python --version
+            - run: |
+                date
+                python --version
     macos:
         name: macos
         runs-on: macos-latest
         steps:
-            - run: python --version > macos.txt
+            - run: |
+                date
+                python --version
     summary:
         name: summary
         runs-on: ubuntu-latest
         needs: [ubuntu, windows, macos]
         steps:
             - run: |
-                  echo "ubuntu"
-                  echo "macos"
+                date
+                python --version

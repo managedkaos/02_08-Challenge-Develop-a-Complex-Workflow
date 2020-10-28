@@ -16,12 +16,11 @@ jobs:
     macos:
         name: macos
         runs-on: macos
-        needs: [Ubuntu, Windows]
         steps:
             - run: python --version
     summary:
         name: summary
-        runs-on: ubuntu`
+        runs-on: ubuntu
         needs: [ubuntu, windows, macos]
         steps:
             - run: python --version
